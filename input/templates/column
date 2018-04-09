@@ -1,0 +1,28 @@
+<columnData>
+    <drilldownReqired>false</drilldownReqired>
+    <hidenColumn>false</hidenColumn>
+    <derivedFromSqlColumn>true</derivedFromSqlColumn>
+    <columnFieldName>|columnFieldName|</columnFieldName>
+    <columnDisplayName>|columnDisplayName|</columnDisplayName>
+    <columnValue>|columnFieldName|</columnValue>
+    <columnDataType>|columnDataType|</columnDataType>
+    <columnDataFormat>
+        <formattingRequired>false</formattingRequired>
+    </columnDataFormat>
+    <sortable>true</sortable>
+    <resizable>true</resizable>
+    <movable>true</movable>
+    <filtered>false</filtered>
+    <filterCondition>contains</filterCondition>
+    <groupable>false</groupable>
+    <enableColumnMenu>true</enableColumnMenu>
+    <exporterPdfAlign>center</exporterPdfAlign>
+    <exporterSuppressExport>false</exporterSuppressExport>
+    <groupingShowAggregationMenu>false</groupingShowAggregationMenu>
+    <groupingShowGroupingMenu>false</groupingShowGroupingMenu>
+    <groupingPriority>0</groupingPriority>
+    <cellTooltip>true</cellTooltip>
+    <order>1</order>
+    <aggregationRequired>false</aggregationRequired>
+    <minWidth>100</minWidth>
+</columnData>

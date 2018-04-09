@@ -1,0 +1,48 @@
+DECLARE
+Long_val_clob CLOB :='<?xml version="1.0" encoding="UTF-8"?>
+<reportTemplate>
+    <id>|bk_nm|</id>
+    <description/>
+    <type>grid</type>
+    <renderApi>UI-GRID</renderApi>
+    <pageTitle/>
+    <dataSource>DB2</dataSource>
+    <schemaName>POWRBCAP</schemaName>
+    <dbOperationType>Q</dbOperationType>
+    <drilldown>false</drilldown>
+|parameters|<query><![CDATA[ |query| ]]></query><gridConfig><metaData>
+    <gridType>PAGING</gridType>
+    <isColumnFooterRequired>false</isColumnFooterRequired>
+    <isGridFooterRequired>false</isGridFooterRequired>
+</metaData><pagination>
+    <offset>0</offset>
+    <limit>25</limit>
+    <pageSizes>25,50,100</pageSizes>
+</pagination><gridOptions>
+    <enableFiltering>true</enableFiltering>
+    <enableColumnMoving>true</enableColumnMoving>
+    <multiSelect>true</multiSelect>
+    <enableColumnResizing>true</enableColumnResizing>
+    <enableCellEdit>false</enableCellEdit>
+    <enableGridMenu>true</enableGridMenu>
+    <exporterCsvFilename>grid.csv</exporterCsvFilename>
+    <exporterPdfFilename>grid.pdf</exporterPdfFilename>
+    <enableSelectAll>true</enableSelectAll>
+    <showGridFooter>false</showGridFooter>
+    <showColumnFooter>false</showColumnFooter>
+    <enableHorizontalScrollbar>ALWAYS</enableHorizontalScrollbar>
+    <enableVerticalScrollbar>ALWAYS</enableVerticalScrollbar>
+    <exporterSuppressColumns>[]</exporterSuppressColumns>
+    <showTreeExpandNoChildren>true</showTreeExpandNoChildren>
+    <enableTreeView>true</enableTreeView>
+</gridOptions><tableData>|columns|</tableData></gridConfig></reportTemplate>';
+
+BEGIN
+Delete FROM OOCS2.BK_RPT_CONFIG where BK_NM='|bk_nm|';
+
+Insert into OOCS2.BK_RPT_CONFIG (BK_RPT_CONFIG_ID,BK_VRSN_NO,BK_NM,BK_TTL,BK_DRILLDOWN,BK_DATA_SVC_URL,BK_RPT_CONFIG_STAT,BK_METADATA,BK_RENDOR_API,BK_RPT_TYP,BK_RCRD_IND,BK_CREATED_TS,BK_CREATED_BY,BK_UPDATED_TS,BK_UPDATED_BY,BK_CAT_SHNM,BK_RPT_VRSN_NO,BK_RPT_DATA_FMT) values 
+(OOCS2.BK_SEQ_RPT_CONFIG_ID.nextval,1,'|bk_nm|','Description','Y','http://www.bnymellon.com','P',Long_val_clob,'UI-GRID','grid','Y',systimestamp,'system',null,null,'STD_RPT','1',NULL);
+
+END;
+/
+
